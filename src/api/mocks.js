@@ -1,9 +1,17 @@
 export const mockConferenceTalk = (overrides = {}) => ({
-  id: "any-id",
-  title: "Any Title",
-  speaker: "Any Speaker",
-  category: "any category",
+  id: "1",
+  title: "Talk 1",
+  speaker: "Speaker 1",
+  category: "Category 1",
   ...overrides,
+});
+
+export const mockCallForPapers = (overrides = {}) => ({
+  byTalkId: {
+      "1": { status: "accepted" },
+      "2": { status: "rejected" },
+      ...overrides,
+  },
 });
 
 export const mockConferenceTalkProposal = (overrides = {}) => ({
@@ -23,5 +31,3 @@ export const mockConferenceTalkDetails = (overrides = {}) => ({
   description: "any description",
   ...overrides,
 });
-
-export const mockCallForPapers = (overrides = { byTalkId: {} }) => overrides;
